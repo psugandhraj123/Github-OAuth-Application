@@ -15,7 +15,7 @@ import {
 import { graphql } from "babel-plugin-relay/macro";
 import { createFragmentContainer } from "react-relay";
 import RepoDetail from "./RepoDetail";
-import EditRepo from "./EditRepo";
+import EditRepoDetail from "./EditRepoDetail";
 const style: SxProps<Theme> = {
   position: "absolute",
   top: "50%",
@@ -88,7 +88,7 @@ const RepoItem = ({ repo }: { repo: any }) => {
               />
             )}
             {modal === "EDIT" && (
-              <EditRepo
+              <EditRepoDetail
                 repositoryId={repo.id}
                 name={repo.name}
                 description={repo.description}

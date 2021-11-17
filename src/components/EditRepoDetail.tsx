@@ -16,7 +16,7 @@ interface EditRepoProps {
   showDetail: () => void;
   handleClose: () => void;
 }
-const EditRepo = (props: EditRepoProps) => {
+const EditRepoDetail = (props: EditRepoProps) => {
   const [name, setName] = useState(props.name);
   const [description, setDescription] = useState(props.description);
 
@@ -73,4 +73,4 @@ const EditRepo = (props: EditRepoProps) => {
   );
 };
 
-export default EditRepo;
+export default EditRepoDetail;
