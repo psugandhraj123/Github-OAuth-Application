@@ -8,8 +8,7 @@ export default function Login() {
   const { state, dispatch } = useContext(AuthContext);
   const [data, setData] = useState({ errorMessage: "", isLoading: false });
 
-  const { client_id } = state;
-  const redirect_uri = window.location.href;
+  const { client_id, redirect_uri } = state;
 
   useEffect(() => {
     // After requesting Github access, Github redirects back to your app with a code parameter
@@ -24,7 +23,6 @@ export default function Login() {
 
       const requestData = {
         code: newUrl[1],
-        redirect_uri,
       };
 
       const proxy_url = state.proxy_url;
@@ -49,7 +47,7 @@ export default function Login() {
           });
         });
     }
-  }, [state, dispatch, data, redirect_uri]);
+  }, [state, dispatch, data]);
 
   if (state.isLoggedIn) {
     return <Navigate to="/" />;
