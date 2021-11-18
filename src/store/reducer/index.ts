@@ -6,7 +6,9 @@ export interface InitialState {
   proxy_url: string;
 }
 export const initialState: InitialState = {
-  isLoggedIn: false,
+  isLoggedIn: localStorage.getItem("access_token")
+    ? JSON.parse(localStorage.getItem("access_token")!)
+    : false,
   access_token: localStorage.getItem("access_token")
     ? JSON.parse(localStorage.getItem("access_token")!)
     : null,
